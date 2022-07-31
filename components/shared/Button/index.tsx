@@ -1,5 +1,5 @@
 import React, { forwardRef, ReactNode } from "react";
-import { classNames } from "../../../../utils/helpers/classnames";
+import { classNames } from "../../../utils/helpers/classnames";
 
 enum Variant {
   PRIMARY,
@@ -52,7 +52,7 @@ const Button = forwardRef<HTMLButtonElement, IButton>(
       disabled={disabled}
       type={type}
       className={classNames(
-        "focus:outline-none transition ease-in-out duration-300",
+        "focus:outline-none transition ease-in-out duration-300 rounded-md py-3",
         VARIANT_MAPS[variant],
         SIZE_MAPS[size],
         disabled && "opacity-50 cursor-not-allowed",
@@ -65,8 +65,8 @@ const Button = forwardRef<HTMLButtonElement, IButton>(
   )
 );
 
-Button.variant = Variant;
-Button.size = Size;
 Button.displayName = "Button";
+
+export { Variant as ButtonVariants, Size as ButtonSizes };
 
 export default Button;
