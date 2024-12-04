@@ -1,15 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import Button, { ButtonVariants } from "../components/shared/Button";
 import Emoji from "../components/shared/Emoji";
 import profilePic from "../public/images/profile-pic.png";
-import reactLogo from "../public/images/react-logo.png";
-import typescriptLogo from "../public/images/typescript.svg";
-import nodejsLogo from "../public/images/nodejs.svg";
-import webpackLogo from "../public/images/webpack.svg";
-import awsLogo from "../public/images/aws.svg";
+import Technologies from "../components/pages/index/Technologies";
 
 const Home: NextPage = () => {
   const { push } = useRouter();
@@ -75,60 +72,22 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
-      <section id="technologies" className="bg-gray-200 p-8 mt-24">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-10 justify-center justify-items-center text-center">
-          <div>
-            <Image
-              src={reactLogo}
-              alt="Picture of the author"
-              width={150}
-              height={150}
-              placeholder="blur"
-              layout="fixed"
-            />
-            <p className="text-2xl text-gray-500 mt-2">React</p>
-          </div>
-          <div>
-            <Image
-              src={typescriptLogo}
-              alt="Picture of the author"
-              width={150}
-              height={150}
-              layout="fixed"
-            />
-            <p className="text-2xl text-gray-500 mt-2">Typescript</p>
-          </div>
-          <div>
-            <Image
-              src={nodejsLogo}
-              alt="Picture of the author"
-              width={150}
-              height={150}
-              layout="fixed"
-            />
-            <p className="text-2xl text-gray-500 mt-2">Node JS</p>
-          </div>
-          <div>
-            <Image
-              src={webpackLogo}
-              alt="Picture of the author"
-              width={150}
-              height={150}
-              layout="fixed"
-            />
-            <p className="text-2xl text-gray-500 mt-2">Webpack</p>
-          </div>
-          <div>
-            <Image
-              src={awsLogo}
-              alt="Picture of the author"
-              width={150}
-              height={150}
-              layout="fixed"
-            />
-            <p className="text-2xl text-gray-500 mt-2">AWS</p>
-          </div>
+      <section id="technologies" className="mt-24">
+        <div className="max-w-7xl mx-auto px-8">
+          <h2 className="text-4xl">Favourite Technologies</h2>
         </div>
+
+        <div className="mt-8 bg-gray-200 p-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-10 justify-center justify-items-center text-center">
+          <Technologies />
+        </div>
+        <div className="text-center mt-8">
+          <a href="#" className="text-xl text-blue-600">
+            View All
+          </a>
+        </div>
+      </section>
+      <section id="projects" className="max-w-7xl mx-auto px-8 mt-24">
+        <h2 className="text-4xl">Projects</h2>
       </section>
     </>
   );

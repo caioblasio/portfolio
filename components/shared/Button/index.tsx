@@ -26,11 +26,9 @@ const SIZE_MAPS: Record<Size, string> = {
   [Size.LARGE]: "px-8 py-3 text-lg",
 };
 const VARIANT_MAPS: Record<Variant, string> = {
-  [Variant.PRIMARY]: "bg-blue-500 hover:bg-blue-800 text-white",
-  [Variant.SECONDARY]:
-    "bg-gray-200 hover:bg-gray-800 text-gray-900 hover:text-white",
-  [Variant.OUTLINED]:
-    "border border-blue-700 text-blue-800 hover:bg-blue-800 hover:text-white",
+  [Variant.PRIMARY]: "bg-blue-500 text-white",
+  [Variant.SECONDARY]: "bg-gray-200 text-gray-900",
+  [Variant.OUTLINED]: "border border-blue-700 text-blue-800",
 };
 
 const Button = forwardRef<HTMLButtonElement, IButton>(
